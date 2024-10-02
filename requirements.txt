@@ -1,0 +1,4 @@
+requests
+pyodbc
+python-dotenv
+openai 
