@@ -2,6 +2,13 @@
 
 This lab will guide you through setting up Azure SQL servers, seeding data, generating embeddings using Azure OpenAI, and using Retrieval Augmented Generation (RAG) to detect anomalies in product data.
 
+Reference Documentation: 
+* [Azure SQL General Documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview?view=azuresql)
+* [Azure OpenAI General Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview)
+* [Azure OpenAI Python Reference](https://learn.microsoft.com/en-us/azure/ai-services/openai/references/on-your-data?tabs=python#tabpanel_1_python)
+* [Pyodbc](https://learn.microsoft.com/en-us/sql/connect/python/pyodbc/step-3-proof-of-concept-connecting-to-sql-using-pyodbc?view=sql-server-ver16)
+* [RAG](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/retrieval-augmented-generation)
+
 ## 1. Creating a Source SQL Server and Seeding Data
 
 ### Step 1: Create a Source SQL Server
@@ -49,8 +56,9 @@ This lab will guide you through setting up Azure SQL servers, seeding data, gene
 
 ## 5. Setup
 
-### Step 1: Install Python on Windows
-1. Download and install Python 3.7 or higher from the *An external link was removed to protect your privacy.*.
+### Step 1: Install Python and ODBC Driver for Windows
+1. Download and install Python from [Python Downloads](https://www.python.org/downloads/).
+2. Download and install ODBC Driver for Windows [ODBC Driver](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16).
 
 ### Step 2: Clone the Repository
 1. Open a terminal and run the following commands:
