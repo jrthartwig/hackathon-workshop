@@ -20,7 +20,11 @@ def generate_embeddings(text, model="text-embedding-ada-002"):
 # SQL connection details
 sql_connection_password = os.getenv("SQL_CONNECTION_PASSWORD")
 driver = "{ODBC Driver 18 for SQL Server}"
-full_sql_connection = f"Driver={driver};Server=tcp:destinationvahackathon.database.windows.net,1433;Database=sourcedatabase_Copy;Uid=vahackathon;Pwd={sql_connection_password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30"
+server = os.getenv("SQL_SERVER")
+database = os.getenv("SQL_DATABASE")
+uid = os.getenv("SQL_UID")
+
+full_sql_connection = f"Driver={driver};Server={server};Database={database};Uid={uid};Pwd={sql_connection_password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
 # Connect to Azure SQL
 conn = pyodbc.connect(full_sql_connection)

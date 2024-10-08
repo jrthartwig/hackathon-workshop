@@ -11,12 +11,16 @@ load_dotenv()
 api_key = os.getenv("OPEN_AI_API_KEY")
 api_version = "2023-03-15-preview"
 azureopenai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-model = "4o"
+model = os.getenv("AZURE_OPEN_AI_MODEL")
 
 # SQL connection details
 sql_connection_password = os.getenv("SQL_CONNECTION_PASSWORD")
 driver = "{ODBC Driver 18 for SQL Server}"
-full_sql_connection = f"Driver={driver};Server=tcp:destinationvahackathon.database.windows.net,1433;Database=sourcedatabase_Copy;Uid=vahackathon;Pwd={sql_connection_password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30"
+server = os.getenv("SQL_SERVER")
+database = os.getenv("SQL_DATABASE")
+uid = os.getenv("SQL_UID")
+
+full_sql_connection = f"Driver={driver};Server={server};Database={database};Uid={uid};Pwd={sql_connection_password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
 def fetch_embeddings():
     conn = pyodbc.connect(full_sql_connection)
